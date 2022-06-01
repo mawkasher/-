@@ -1,0 +1,24 @@
+Console.WriteLine("Сколько было яблок?");
+int yab = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Сколько было человек?");
+int people = Convert.ToInt32(Console.ReadLine());
+int temp = people - 1;
+int [] pep = new int [people+1];
+pep[0] = yab;
+for (int i = 0; i < people; i++)
+{
+    
+    for (int j = 0; j < people; j++)
+    {
+        if (j != i)
+        {
+            pep[j] = pep[j] + pep[i] / temp;
+        }
+    }
+    pep[i] = pep[i] % temp;
+}
+Console.WriteLine("У людей стало столько яблок ");
+for (int i = 0; i < people; i++)
+{
+    Console.WriteLine(pep[i]);
+}
