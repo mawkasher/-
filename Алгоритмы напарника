@@ -1,0 +1,72 @@
+int sum=0;
+Console.WriteLine("Введите первое сопротивление R1");
+int R1 = Int32.Parse(Console.ReadLine());
+Console.WriteLine("Введите второе сопротивление R2");
+int R2 = Int32.Parse(Console.ReadLine());
+sum = R1 + R2;
+Console.WriteLine($"Сумма сопротивления: {sum}");
+/////////////////////////////////////////////////////////////////
+int min;
+int sec;
+Console.WriteLine("Введите количество минут ");
+min = int.Parse(Console.ReadLine());
+Console.WriteLine("Введите количество секунд ");
+sec = int.Parse(Console.ReadLine());
+if (sec >= 60 || min >= 60)
+{
+Console.WriteLine("Ошибка. Одна из величин больше 60");
+}
+else
+{
+Console.WriteLine($"Общие время равно {(min * 60) + sec} ");
+}
+///////////////////////////////////////////////////////////////////
+int[] mass = new int[10];
+for (int i = 0; i < 10; i++)
+{
+ mass[i] = Convert.ToInt32(Console.ReadLine());
+}
+int minsum = 100, left = 0, right = 0;
+for (int i = 1; i < mass.Length; i++)
+{
+ if ((mass[i] + mass[i - 1]) < minsum)
+ {
+ left = mass[i];
+ right = mass[i - 1];
+ minsum = mass[i] + mass[i - 1];
+ }
+}
+Console.WriteLine("Минимальная сумма: {0}, слогаемые: {1} {2}", minsum, right, 
+left);
+///////////////////////////////////////////////////////////////////
+Console.WriteLine("Введите строку:");
+string str = Console.ReadLine();
+int max = int.Parse(str[0].ToString());
+for (int i = 1; i < str.Length; i++)
+{
+ if (max < int.Parse(str[i].ToString()))
+ {
+ max = int.Parse(str[i].ToString());
+ }
+}
+Console.WriteLine("Наибольшая цифра = " + max);
+///////////////////////////////////////////////////////////////////
+int number = Int32.Parse(Console.ReadLine());
+ int count = 0;
+ int num = Int32.Parse(Console.ReadLine());
+ while (number != 0)
+ {
+ if (number % 10 == num)
+ count++;
+ number /= 10;
+ }
+ Console.WriteLine(count);
+ ///////////////////////////////////////////////////////////////////
+ int x = Convert.ToInt32(Console.ReadLine());
+for (int i = 1; i <= x; i++)
+{
+ if ((x % i) == 0)
+ {
+ Console.Write(i + " ");
+ }
+}
