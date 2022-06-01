@@ -1,0 +1,37 @@
+Console.WriteLine("Введите площадь ");
+int S1 = Convert.ToInt32(Console.ReadLine());
+int S2 = 0;
+for (int S = 1; S <= S1; S++)
+{
+    int a1 =0, b1=0, c1=0, a2=0, b2=0, c2=0, a3=0, b3=0, c3=0, h = 0;
+    for (int a = 1; a <= S; a++)
+    {
+        for (int b = 1; b <= S; b++)
+        {
+            if (a * b == S)
+            {
+                for (int c = 1; c < a + b; c++)
+                {
+                    if (a * a + b * b == c * c)
+                    {
+                        if (h == 2)
+                        {
+                            a3 = a; 
+                            b3 = b; 
+                            c3 = c; 
+                            S2 = 1;
+                            Console.WriteLine($"a = {a1}  b = {b1}  c = {c1}");
+                            Console.WriteLine($"a = {a2}  b = {b2}  c = {c2}");
+                            Console.WriteLine($"a = {a3}  b = {b3}  c = {c3}");
+                            Console.WriteLine($"Площадь = {S}");
+                        }
+                        if (h == 1) { a2 = a; b2 = b; c2 = c; h = 2; }
+                        if (h == 0) { a1 = a; b1 = b; c1 = c; h = 1; }
+                    }
+                }
+            }
+        }
+    }
+}
+if (S2 == 0)
+    Console.WriteLine($"Трёх таких треугольников с площадью меньше {S1} не существует");
