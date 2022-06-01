@@ -1,0 +1,23 @@
+Random rand = new Random();
+int[] mass = new int[11];
+Console.WriteLine("Сгенерированная последовательность:");
+for (int i = 0; i < 10; i++)
+{
+    mass[i] = rand.Next(0, 9);
+    Console.Write(mass[i]);
+}
+Console.WriteLine(" ");
+Console.WriteLine("Меняем местами:");
+var random = new Random();
+for (var i = 0; i < 10; i++)
+{
+    var key = mass[i];
+    var rnd = random.Next(i, mass.Length);
+    mass[i] = mass[rnd];
+    mass[rnd] = key;
+ }
+for (int i = 0; i < 10; i++)
+{
+    Console.Write(mass[i]);
+}
+
