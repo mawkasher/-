@@ -1,0 +1,26 @@
+int user;
+user = Int32.Parse(Console.ReadLine());
+while(attemp>0){ 
+    if (user == rannum)
+    {
+        Console.WriteLine("Ты угадал");
+        attemp=0;
+    }
+    else
+    {
+        attemp--;
+        Console.WriteLine("Ты не угадал");
+        if (user > rannum)
+            Console.WriteLine("Загаданное число меньше");
+        if (user < rannum)
+            Console.WriteLine("Загаданное число больше");
+        if(attemp == 0)
+        {
+            Console.WriteLine("Попытки закончились");
+            break;
+        }
+            
+        user = Int32.Parse(Console.ReadLine());
+    }
+}
+Console.WriteLine("ИГРА ОКОНЧЕНА");
